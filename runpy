@@ -1,0 +1,24 @@
+# python3 /home/albie/Projects/auto/$1.py
+#!/home/albie/Projects/auto/runpy bash
+
+realdir="$( dirname -- "$0"; )";
+cd $realdir;
+directory="$( pwd; )";
+
+# echo "Directory=${directory}, Realdir=${realdir}";
+
+# Run python script
+# python3 $1.py
+# echo $($# -eq 2);
+if [ $# -eq 2 ];
+  then
+    echo "run python function";
+    python3 -c "import $1; $1.$2()";
+fi
+
+if [ $# -eq 1 ];
+  then
+    echo "run python script";
+    python3 $1.py;
+fi
+  
